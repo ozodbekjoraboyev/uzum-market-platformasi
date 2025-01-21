@@ -3,6 +3,8 @@ import lokationCentr from "../../assets/lokation.svg";
 import bayrog from "../../assets/bayrog.svg";
 import UzumImput from "./uzumInput/UzumImput";
 import ruski from "../../assets/ruski.png";
+import { Link } from "react-router";
+import SavolJavoblar from "../SavolJavoblar";
 
 function Nav() {
   const [navbarHeader] = useState([
@@ -10,6 +12,7 @@ function Nav() {
       citi: "Shahar: Toshkent",
       lokation: "Topshirish punktlari",
       buyurtma: "Buyurtmangizni 1 kunda bepul yetkazib beramiz!",
+      catigore: "carigores",
       savolar: "Savol-javoblar",
       yetkazish: "Buyurtmalarim",
       tilUz: "О'zbekcha",
@@ -21,7 +24,7 @@ function Nav() {
 
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
-    setLokation(false); 
+    setLokation(false);
   };
 
   return (
@@ -30,7 +33,6 @@ function Nav() {
         <div className="bg-slate-300 p-3">
           {navbarHeader.map((item, index) => (
             <div key={index} className="flex justify-between">
-
               <div className="flex gap-4">
                 <img
                   className="w-3 cursor-pointer"
@@ -43,10 +45,14 @@ function Nav() {
 
               <p className="opacity-50">{item.buyurtma}</p>
               <div className="flex gap-2 items-center relative">
-                <p>{item.savolar}</p>
+                <Link to="/catigores">
+                <p>{item.catigore}</p>
+                </Link>
+                <Link to="/savoljavoblar">
+                  <p>{item.savolar}</p>
+                </Link>
                 <p>{item.yetkazish}</p>
 
- 
                 <div
                   onClick={() => setLokation(!lokation)}
                   className="flex items-center gap-2 cursor-pointer"
@@ -59,7 +65,6 @@ function Nav() {
                   <p>{selectedLanguage}</p>
                 </div>
 
-                {/* Dropdown menyu */}
                 {lokation && (
                   <div className="absolute top-8 right-0 bg-white shadow-md p-2 rounded-md">
                     <div
@@ -84,6 +89,7 @@ function Nav() {
         </div>
       </header>
       <UzumImput />
+
     </div>
   );
 }

@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import bagSHop from "../../assets/bagSHop.svg";
 import sertsaRangsiz from "../../assets/sertsaRangsiz.svg";
 import sertsaRangli from "../../assets/sertsaRangli.svg";
+import { Link } from "react-router";
 
 function Card() {
   const [card, setCrd] = useState(false);
   const [likes, setLikes] = useState({});
+
 
   const fetchCard = () => {
     fetch("https://api.escuelajs.co/api/v1/products")
@@ -35,6 +37,17 @@ function Card() {
       {card.length > 0 ? (
         card.map((item) => (
           <div key={item.id} className="p-4 m-2 rounded items-center">
+            <button
+              className=" absolute "
+              onClick={() => {
+                const Delet = card.filter((filterItme) => {
+                  return filterItme.id !== item.id;
+                });
+                setCrd(Delet);
+              }}
+            >
+              ❌
+            </button>
             <img
               onClick={() => toggleLike(item.id)}
               className="w-5 absolute cursor-pointer ml-[200px] pt-4"
@@ -42,11 +55,13 @@ function Card() {
               alt="Like"
             />
 
-            <img
-              className="w-[232px] h-[309px] rounded"
-              src={item.images[0]}
-              alt={item.title}
-            />
+            <Link to={`cardui/${item.id}`}>
+              <img
+                className="w-[232px] h-[309px] rounded"
+                src={item.images}
+                alt={item.title}
+              />
+            </Link>
             <h2 className="text-black text-lg">{item.title}</h2>
             <p>{item.updatedAt}</p>
 

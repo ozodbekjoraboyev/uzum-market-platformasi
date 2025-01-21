@@ -19,6 +19,62 @@ function Madal({ madal, setMadal }) {
       foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
       savdo: "Haftalik tavomlar",
     },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "Elekteonika",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "kiyim",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "poyabzal",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "Akeesuarlar",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "Haftalik tavomlar",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "Haftalik tavomlar",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "go'zalik va pardoz",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "Salomatlik",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "Uy ro'zgor buyumlari",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "qurilish va tamirlash",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "Aftamabilar",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "Aftamabilar",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "Aftamabilar",
+    },
+    {
+      foyiz: "https://static.uzum.uz/fast_categories/Topsales.png",
+      savdo: "Aftamabilar",
+    },
   ];
 
   useEffect(() => {
@@ -30,19 +86,21 @@ function Madal({ madal, setMadal }) {
   }, [madal]);
 
   return (
-    <>       
-      <div className=" absolute">
-        <div
-          className={`${
-            madal ? " opacity-50 visible" : "opacity-0 invisible"
-          } fixed inset-0 bg-black transition-opacity duration-500`}
-          onClick={() => setMadal(false)}
-        ></div>
+    <>
+      <div className="absolute overflow-auto z-50">
 
         <div
           className={`${
-            showModal ? "opacity-100 visible  mt-[150px]" : "opacity-0 invisible"
-          } bg-slate-300 m-auto fixed inset-0 max-w-md h-[70vh] rounded-xl shadow-lg transition-all duration-500 ease-in-out p-4`}
+            madal ? "opacity-50 visible" : "opacity-0 invisible"
+          } fixed inset-0 bg-black transition-opacityz-50`}
+          onClick={() => setMadal(false)}
+        ></div>
+
+
+        <div
+          className={`${
+            showModal ? "opacity-100 visible mt-[150px]" : "opacity-0 invisible"
+          } bg-slate-300 m-auto fixed inset-0 h-[80vh]  rounded-xl shadow-lg transition-all duration-500 ease-in-out p-4 z-50 overflow-auto `}
         >
           {katalogMadal.map((item, index) => (
             <div

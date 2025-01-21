@@ -6,7 +6,7 @@ import karzinka from "../../../assets/karzinka.svg"
 function Krish() {
   return (
  <>
-<div className=' flex gap-2 items-center'>
+<div className=' flex gap-2 items-center mr-5'>
       <img className=' cursor-pointer w-4' src={krish} alt="" />
       <p>Krish</p>
       <img className=' cursor-pointer w-4' src={heart} alt="" />
